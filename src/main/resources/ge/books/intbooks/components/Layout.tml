@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+	<head>
+		<meta charset="utf-8" />
+		<title>IBDB - ${title}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]> <script src="../assets/js/html5shiv.js"></script> <![endif] -->
+
+		<!-- Fav and touch icons -->
+		<link rel="shortcut icon" href="${asset:context:/favicon.ico}" />
+
+		<!-- Sign in/out CSS -->
+		<link rel="stylesheet" href="${asset:context:/css/sign-in.css}" />
+
+		<!-- Font Awesome CSS -->
+		<link rel="stylesheet" href="${asset:context:/css/font-awesome.min.css}" />
+
+		<!-- GEO Fonts CSS -->
+		<link rel="stylesheet" href="${asset:context:/css/geo-fonts.css}" />
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="${asset:context:/css/custom.css}" />
+
+		<!-- View CSS -->
+		<link rel="stylesheet" href="${asset:context:/css/view.css}" />
+
+	</head>
+
+	<body>
+
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container-custom">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<t:pagelink page="index" class="navbar-brand">${message:layout.brand_name}</t:pagelink>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li>
+							<t:pagelink page="Index">მთავარი</t:pagelink>
+						</li>
+						<li>
+							<t:pagelink page="About">ჩვენ შესახებ</t:pagelink>
+						</li>
+						<li>
+							<t:pagelink page="Contact">კონტაქტი</t:pagelink>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<t:If t:test="userLoggedIn">
+							<!-- User logged in -->
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"
+									role="button" aria-haspopup="true" aria-expanded="false">
+									<i class="fa fa-user" aria-hidden="true"></i>
+									${prop:username}
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<t:pagelink page="profile/index">
+											${message:layout.profile}
+										</t:pagelink>
+									</li>
+									<li role="separator" class="divider"></li>
+									<li>
+										<t:pagelink page="logout">
+											<i class="fa fa-sign-out" aria-hidden="true"></i>
+											${message:layout.log_out}
+										</t:pagelink>
+									</li>
+								</ul>
+							</li>
+							<p:else>
+								<!-- User not logged in -->
+								<li>
+									<t:pagelink page="login">
+										<i class="fa fa-sign-in" aria-hidden="true"></i>
+										${message:layout.log_in}
+									</t:pagelink>
+								</li>
+								<li>
+									<t:pagelink page="register">
+										${message:layout.register}
+									</t:pagelink>
+								</li>
+							</p:else>
+						</t:If>
+					</ul>
+
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</div>
+
+		<div class="container-custom">
+			<div class="row">
+				<div class="span12">
+					<t:alerts />
+				</div>
+			</div>
+		</div>
+
+		<div class="container-custom">
+			<t:If t:test="sidebar">
+				<div class="col-sm-3">
+					<h2>${message:layout.genres}</h2>
+					<div class="list-group">
+						<a href="#" t:type="loop" t:source="genres" t:value="genre">${genre.name}</a>
+						<a href="#" class="list-group-item"> Cras justo odio </a>
+						<a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+						<a href="#" class="list-group-item">Morbi leo risus</a>
+						<a href="#" class="list-group-item">Porta ac consectetur ac</a>
+						<a href="#" class="list-group-item">Vestibulum at eros</a>
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<t:body />
+				</div>
+				<p:else>
+					<div class="col-sm-12">
+						<t:body />
+					</div>
+				</p:else>
+			</t:If>
+			<hr />
+			<footer>
+				<p>&copy;
+					${message:layout.copyright}
+				</p>
+			</footer>
+
+		</div>
+		<!-- /container -->
+
+	</body>
+</html>

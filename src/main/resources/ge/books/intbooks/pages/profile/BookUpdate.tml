@@ -1,0 +1,19 @@
+<html t:type="layout" title="${message:profile.title}"
+	t:sidebarTitle="Framework Version" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+	<div class="row">
+		<div class="col-sm-12">
+
+			<h3>Update the Book</h3>
+
+			<t:alerts />
+
+			<t:beaneditform t:id="form" object="book"
+				submitLabel="Save" cancel="true">
+				[BeanEditForm here]
+			</t:beaneditform>
+
+		</div>
+	</div>
+</html>

@@ -1,0 +1,155 @@
+<html t:type="layout" title="${book.title}"
+	t:sidebarTitle="Framework Version"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+
+<div class="row">
+
+	<h1>
+		<i class="fa fa-bookmark fa-lg" aria-hidden="true"></i> <span
+			style="margin-left: 20px;"> ${book.title} <small
+			style="margin-left: 8px;">${book.author}</small>
+		</span>
+	</h1>
+	<hr />
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<figure class="book">
+			<ul class="hardcover_front">
+				<li>
+					<div class="coverDesign">
+						<!-- <span class="ribbon-view">${book.ribbon}</span> -->
+						<img width="100%" height="100%" alt="" src="${book.coverImageUrl}" />
+					</div>
+				</li>
+				<li></li>
+			</ul>
+			<ul class="page">
+				<li></li>
+				<li>
+					<div class="front-page">
+						<p class="front-page-author">${book.author}</p>
+						<p class="front-page-title">${book.title}</p>
+						<p class="front-page-year">${book.releaseYear}</p>
+					</div>
+				</li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<ul class="hardcover_back">
+				<li></li>
+				<li></li>
+			</ul>
+			<ul class="book_spine">
+				<li></li>
+				<li></li>
+			</ul>
+		</figure>
+	</div>
+	<div class="col-sm-8">
+		<table class="table">
+			<tr>
+				<th>${message:view.book_title}:</th>
+				<td>${book.title}</td>
+			</tr>
+			<tr>
+				<th>${message:view.book_author}:</th>
+				<td>${book.author}</td>
+			</tr>
+			<tr>
+				<th>${message:view.book_release_year}:</th>
+				<td>${book.releaseYear}</td>
+			</tr>
+			<tr>
+				<th>${message:view.book_genres}:</th>
+				<td>${book.genresAsString}</td>
+			</tr>
+			<tr>
+				<th>${message:view.book_description}:</th>
+				<td>${book.description}</td>
+			</tr>
+			<tr>
+				<th>${message:view.book_rating}:</th>
+				<td><i class="fa fa-star fa-lg" aria-hidden="true"></i>
+					${book.ratingAsString}</td>
+			</tr>
+			<tr>
+				<th>${message:view.book_review_count}:</th>
+				<td>${book.textReviewsNumber}</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<t:If test="reviewsPresent">
+	<div class="col-sm-12">
+		<h2>
+			<i class="fa fa-comments fa-lg" aria-hidden="true"></i>
+			${message:view.book_review_texts}:
+		</h2>
+		<hr />
+		<dl class="dl-horizontal" t:type="loop" t:source="bookReviews"
+			t:value="bookReview">
+			<dt class="col-sm-4">
+				<i class="fa fa-star fa-lg" aria-hidden="true"></i>
+				${bookReview.rating}
+			</dt>
+			<dt class="col-sm-4">
+				<i class="fa fa-user" aria-hidden="true"></i>
+				${bookReview.user.username}:
+			</dt>
+			<dd class="col-sm-8">${bookReview.text}</dd>
+		</dl>
+	</div>
+</t:If>
+
+
+<div class="row">
+	<div class="col-sm-12">
+		<h2>
+			${message:view.rate_the_book} <small>${message:view.and_write_review}</small>
+		</h2>
+		<hr />
+
+		<t:If test="userLoggedIn">
+			<t:form t:id="reviewForm">
+				<div class="form-group">
+					<label for="ratingInput"><i class="fa fa-star-half-o"
+						aria-hidden="true"></i> ${message:view.book_rating}</label>
+					<t:TextField validate="required" t:value="ratingValue"
+						id="ratingInput" t:id="ratingValue" t:type="number" class="rating"
+						data-max="10" data-min="1" />
+				</div>
+				<div class="form-group">
+					<label for="reviewText"><i class="fa fa-book"
+						aria-hidden="true"></i> ${message:view.review_text}</label>
+					<t:TextArea t:value="textareaValue" id="reviewText"
+						t:id="textAreaValue"
+						placeholder="${message:view.you_can_optionally_write_review_text_here}"></t:TextArea>
+				</div>
+				<t:If t:test="hasUserPostedReview">
+					<t:submit class="btn btn-danger"
+						value="${message:view.update_review}" />
+					<p:else>
+						<t:submit class="btn btn-success"
+							value="${message:view.submit_review}" />
+					</p:else>
+				</t:If>
+			</t:form>
+			<p:else>
+				<div class="alert alert-info">${message:view.you_have_to_be_logged_in}</div>
+			</p:else>
+		</t:If>
+	</div>
+</div>
+<br />
+<script src="${asset:context:/js/jquery-1.12.3.min.js}"></script>
+
+<!-- Input to Star Rating -->
+<script src="${asset:context:/js/bootstrap-rating-input.js}"></script>
+
+
+</html>

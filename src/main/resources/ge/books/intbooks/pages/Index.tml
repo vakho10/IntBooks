@@ -1,0 +1,54 @@
+<html t:type="layout" sidebar="false" title="${message:index.title}"
+	t:sidebarTitle="Framework Version" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+	<!-- BOOKS -->
+
+	<div class="jumbotron">
+		<h1>${message:index.jumbotron.title}</h1>
+		<p>${message:index.jumbotron.text}</p>
+		<p>			
+			<a t:type="pageLink" t:page="About" class="btn btn-primary btn-lg" role="button">${message:index.jumbotron.learn_more} &raquo;</a>
+		</p>
+	</div>
+
+	<t:If t:test="dataAvailable">
+		<h2>${message:index.latest_books}</h2>
+		<div class="row book-row">
+			<div class="col-sm-2 book-item" t:type="loop" t:source="books"
+				t:value="book">
+				<p class="book-reviews">
+					<i class="fa fa-comments-o fa-lg"></i>
+					${book.textReviewsNumber}
+				</p>
+				<p class="book-rate">
+					<i class="fa fa-star fa-lg"></i>
+					${book.ratingAsString}
+				</p>
+				<div style="clear: both;"></div>
+
+				<a t:type="pagelink" t:page="View" t:context="${book.id}" class="book-cover">
+					<div>
+						<img src="${book.coverImageUrl}" />
+						<div class="ribbon">
+							<span>${book.ribbon}</span>
+						</div>
+					</div>
+				</a>
+				<div class="book-caption">
+					<a t:type="pagelink" t:page="View" t:context="${book.id}">
+						<h4>${book.title}</h4>
+					</a>
+					<span class="text-muted">${book.author}</span>
+				</div>
+			</div>
+		</div>
+		<p:else>
+			<div class="alert alert-danger">${message:index.no_data}</div>
+		</p:else>
+	</t:If>
+	<!-- ./BOOKS -->
+
+	<!-- <h1>${prop:pageNumber}</h1> -->
+
+</html>

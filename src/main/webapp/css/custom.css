@@ -1,0 +1,271 @@
+body {
+	font-family: bpg_arial, Sylfaen !important;
+	background-color: #ecf0f1 none repeat scroll 0 0 !important;
+	color: #34495e !important;
+	padding-top: 60px !important;
+	padding-bottom: 40px !important;
+}
+
+.jumbotron {
+	padding: 48px !important;
+}
+
+.jumbotron h1 {
+	font-size: 54px !important;	
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+	font-family: ninomtavruli_bold !important;
+}
+
+.rating-input {
+	font-size: 2em;
+}
+
+.glyphicon-star {
+	color: #f3ce00;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.rating-input>i {
+	cursor: pointer;
+}
+
+.dl-horizontal {
+	margin-left: -1.875rem;
+	margin-right: -1.875rem;
+}
+
+.dl-horizontal::after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+.container-custom {
+	width: 970px;
+	margin: 0 auto;
+}
+
+.navbar-nav {
+	font-family: supersquare_mtavruli;
+}
+
+.book-row {
+	padding-bottom: 20px;
+}
+
+.book-item {
+	height: 300px;
+    margin-top: 20px;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+}
+
+.book-item img {
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2),
+		0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.book-cover {
+	display: block;
+	height: 170px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.book-sm .book-cover {
+	height: 140px !important;
+}
+
+.book-sm .book-item {
+	height: 260px !important;
+	font-size: 0.85em;
+}
+
+.book-cover>div {
+	height: 100%;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.book-cover>div>img {
+	height: 100%;
+	width: 100%;
+}
+
+.book-caption {
+	margin: 10px auto;
+	max-width: 400px;
+	text-align: center;
+	font-size: 0.95em;
+}
+
+.book-caption h4 {
+	font-size: 1.15em;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.book-caption span {
+	font-size: 0.95em;
+	/* 	display: block; */
+	/*     white-space: nowrap; */
+	/*     overflow:hidden !important; */
+	/*     text-overflow: ellipsis; */
+}
+
+.book-rate, .book-reviews {
+	color: #777;
+	font-size: 0.9em;
+	margin-bottom: 7px;
+}
+
+.book-rate {
+	float: right;
+}
+
+.book-reviews {
+	float: left;
+}
+
+.fa-star {
+	color: #f3ce00;
+}
+
+.ribbon {
+	height: 75px;
+	overflow: hidden;
+	position: absolute;
+	right: -5px;
+	text-align: right;
+	top: -5px;
+	width: 75px;
+	z-index: 1;
+}
+
+.ribbon span {
+	background: #f70505 none repeat scroll 0 0;
+	box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+	color: #fff;
+	display: block;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 20px;
+	position: absolute;
+	right: -21px;
+	text-align: center;
+	text-transform: uppercase;
+	top: 19px;
+	transform: rotate(45deg);
+	width: 100px;
+}
+
+.ribbon span::before {
+	border-color: #f70505 transparent transparent #f70505;
+	border-style: solid;
+	border-width: 3px;
+	content: "";
+	left: 0;
+	position: absolute;
+	top: 100%;
+	z-index: -1;
+}
+
+.ribbon span::after {
+	border-color: #f70505 #f70505 transparent transparent;
+	border-style: solid;
+	border-width: 3px;
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 100%;
+	z-index: -1;
+}
+
+.ribbon-blue span {
+	background: #2989d8 none repeat scroll 0 0 !important;
+}
+
+.ribbon-blue span::before {
+	border-left: 3px solid #2989d8 !important;
+	border-top: 3px solid #2989d8 !important;
+}
+
+.ribbon-blue span::after {
+	border-right: 3px solid #2989d8 !important;
+	border-top: 3px solid #2989d8 !important;
+}
+
+.ribbon-yellow span {
+	background: #f79e05 none repeat scroll 0 0 !important;
+}
+
+.ribbon-yellow span::before {
+	border-left: 3px solid #f79e05 !important;
+	border-top: 3px solid #f79e05 !important;
+}
+
+.ribbon-yellow span::after {
+	border-right: 3px solid #f79e05 !important;
+	border-top: 3px solid #f79e05 !important;
+}
+
+.ribbon-green span {
+	background: #9bc90d none repeat scroll 0 0 !important;
+}
+
+.ribbon-green span::before {
+	border-left: 3px solid #9bc90d !important;
+	border-top: 3px solid #9bc90d !important;
+}
+
+.ribbon-green span::after {
+	border-right: 3px solid #9bc90d !important;
+	border-top: 3px solid #9bc90d !important;
+}
+
+.ribbon-gray span {
+	background: #b6bac9 none repeat scroll 0 0 !important;
+}
+
+.ribbon-gray span::before {
+	border-left: 3px solid #b6bac9 !important;
+	border-top: 3px solid #b6bac9 !important;
+}
+
+.ribbon-gray span::after {
+	border-right: 3px solid #b6bac9 !important;
+	border-top: 3px solid #b6bac9 !important;
+}
+
+.ribbon-navi span {
+	background: #05eff7 none repeat scroll 0 0 !important;
+}
+
+.ribbon-navi span::before {
+	border-left: 3px solid #05eff7 !important;
+	border-top: 3px solid #05eff7 !important;
+}
+
+.ribbon-navi span::after {
+	border-right: 3px solid #05eff7 !important;
+	border-top: 3px solid #05eff7 !important;
+}
+
+.ribbon-black span {
+	background: #000 none repeat scroll 0 0 !important;
+}
+
+.ribbon-black span::before {
+	border-left: 3px solid #000 !important;
+	border-top: 3px solid #000 !important;
+}
+
+.ribbon-black span::after {
+	border-right: 3px solid #000 !important;
+	border-top: 3px solid #000 !important;
+}

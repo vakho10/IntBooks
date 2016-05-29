@@ -1,0 +1,16 @@
+<html t:type="layout" title="${message:profile.title}"
+	t:sidebarTitle="Framework Version" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+	<div class="row">
+		<div class="col-sm-12">
+		
+			<h3>Create a New Book</h3>
+		
+			<t:alerts />
+			
+			<t:beaneditform t:id="form" object="book" include="title,author,releaseYear,description,ribbon,coverImageUrl" submitLabel="Save" cancel="true"/>
+
+		</div>
+	</div>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
+		<property name="hibernate.connection.url">jdbc:hsqldb:mem:ibdb</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.connection.password"></property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+
+
+		<!-- <property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=IBDB;instanceName=VAKHO-PC;</property> -->
+		<!-- <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property> -->
+		<!-- <property name="dialect">ge.books.ibdb.sql.SqlServerDialect</property> -->
+		<!-- <property name="hibernate.default_schema">dbo</property> -->
+		<!-- <property name="hibernate.connection.username">vakho</property> -->
+		<!-- <property name="hibernate.connection.password">123456</property> -->
+		<!-- <property name="hbm2ddl.auto">create</property> -->
+		<!-- <property name="hibernate.show_sql">true</property> -->
+		<!-- <property name="hibernate.format_sql">true</property> -->
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,278 @@
+EXCEPTION STACK:
+
+
+        Exception: org.apache.tapestry5.ioc.internal.OperationException
+          Message: could not execute statement
+            trace: Handling page render request for page AddData
+                   Triggering event 'activate' on AddData
+
+        Exception: org.apache.tapestry5.runtime.ComponentEventException
+          Message: could not execute statement
+          context: org.apache.tapestry5.internal.EmptyEventContext@59666948
+        eventType: activate
+
+        Exception: org.hibernate.exception.DataException
+          Message: could not execute statement
+              SQL: n/a
+         SQLState: 22001
+        errorCode: 3401
+
+        Exception: java.sql.SQLDataException
+          Message: data exception: string data, right truncation;  table: BOOKS column: DESCRIPTION
+         SQLState: 22001
+        errorCode: 3401
+
+        Exception: org.hsqldb.HsqlException
+          Message: data exception: string data, right truncation;  table: BOOKS column: DESCRIPTION
+         SQLState: 22001
+        errorCode: 3401
+            level: 0
+  noDataCondition: org.hsqldb.HsqlException: no data
+    statementCode: 50
+
+        Exception: org.hsqldb.HsqlException
+          Message: data exception: string data, right truncation
+         SQLState: 22001
+        errorCode: -3401
+            level: 0
+    statementCode: 0
+
+        Exception: org.hsqldb.HsqlException
+          Message: no data
+         SQLState: 02000
+        errorCode: -1100
+            level: 0
+    statementCode: 0
+
+  Stack trace:
+
+  - org.hsqldb.error.Error.error(Unknown Source)
+  - org.hsqldb.error.Error.error(Unknown Source)
+  - org.hsqldb.HsqlException.<clinit>(Unknown Source)
+  - org.hsqldb.error.Error.error(Unknown Source)
+  - org.hsqldb.error.Error.error(Unknown Source)
+  - org.hsqldb.error.Error.runtimeError(Unknown Source)
+  - org.hsqldb.types.Type.getType(Unknown Source)
+  - org.hsqldb.types.Type.getDefaultType(Unknown Source)
+  - org.hsqldb.dbinfo.DatabaseInformationMain.SYSTEM_TYPEINFO(Unknown Source)
+  - org.hsqldb.dbinfo.DatabaseInformationMain.generateTable(Unknown Source)
+  - org.hsqldb.dbinfo.DatabaseInformationFull.generateTable(Unknown Source)
+  - org.hsqldb.dbinfo.DatabaseInformationMain.setStore(Unknown Source)
+  - org.hsqldb.persist.PersistentStoreCollectionSession.getStore(Unknown Source)
+  - org.hsqldb.Table.getRowStore(Unknown Source)
+  - org.hsqldb.RangeVariable$RangeIteratorMain.<init>(Unknown Source)
+  - org.hsqldb.RangeVariable$RangeIteratorMain.<init>(Unknown Source)
+  - org.hsqldb.RangeVariable.getIterator(Unknown Source)
+  - org.hsqldb.QuerySpecification.buildResult(Unknown Source)
+  - org.hsqldb.QuerySpecification.getSingleResult(Unknown Source)
+  - org.hsqldb.QuerySpecification.getResult(Unknown Source)
+  - org.hsqldb.StatementQuery.getResult(Unknown Source)
+  - org.hsqldb.StatementDMQL.execute(Unknown Source)
+  - org.hsqldb.Session.executeCompiledStatement(Unknown Source)
+  - org.hsqldb.Session.executeDirectStatement(Unknown Source)
+  - org.hsqldb.Session.execute(Unknown Source)
+  - org.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)
+  - org.hsqldb.jdbc.JDBCStatement.executeQuery(Unknown Source)
+  - org.hsqldb.jdbc.JDBCDatabaseMetaData.execute(Unknown Source)
+  - org.hsqldb.jdbc.JDBCDatabaseMetaData.executeSelect(Unknown Source)
+  - org.hsqldb.jdbc.JDBCDatabaseMetaData.getTypeInfo(Unknown Source)
+  - org.hibernate.engine.jdbc.spi.TypeInfo.extractTypeInfo(TypeInfo.java:101)
+  - org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:163)
+  - org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
+  - org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
+  - org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
+  - org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
+  - org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
+  - org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1928)
+  - org.apache.tapestry5.internal.hibernate.HibernateSessionSourceImpl.<init>(HibernateSessionSourceImpl.java:46)
+  - sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  - sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+  - sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+  - java.lang.reflect.Constructor.newInstance(Unknown Source)
+  - org.apache.tapestry5.ioc.internal.util.ConstructorInvoker.invoke(ConstructorInvoker.java:50)
+  - org.apache.tapestry5.ioc.internal.util.LoggingInvokableWrapper.invoke(LoggingInvokableWrapper.java:43)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1258)
+  - org.apache.tapestry5.ioc.internal.util.ConstructionPlan.createObject(ConstructionPlan.java:61)
+  - org.apache.tapestry5.ioc.internal.ConstructorServiceCreator.createObject(ConstructorServiceCreator.java:62)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator$1.invoke(OperationTrackingObjectCreator.java:47)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1258)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator.createObject(OperationTrackingObjectCreator.java:51)
+  - org.apache.tapestry5.ioc.internal.SingletonServiceLifecycle.createService(SingletonServiceLifecycle.java:30)
+  - org.apache.tapestry5.ioc.internal.LifecycleWrappedServiceCreator.createObject(LifecycleWrappedServiceCreator.java:47)
+  - org.apache.tapestry5.ioc.internal.AdvisorStackBuilder.createObject(AdvisorStackBuilder.java:64)
+  - org.apache.tapestry5.ioc.internal.InterceptorStackBuilder.createObject(InterceptorStackBuilder.java:55)
+  - org.apache.tapestry5.ioc.internal.RecursiveServiceCreationCheckWrapper.createObject(RecursiveServiceCreationCheckWrapper.java:61)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator$1.invoke(OperationTrackingObjectCreator.java:47)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1258)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator.createObject(OperationTrackingObjectCreator.java:51)
+  - org.apache.tapestry5.ioc.internal.services.JustInTimeObjectCreator.obtainObjectFromCreator(JustInTimeObjectCreator.java:67)
+  - org.apache.tapestry5.ioc.internal.services.JustInTimeObjectCreator.createObject(JustInTimeObjectCreator.java:55)
+  - $HibernateSessionSource_163cc81b75ab.delegate(Unknown Source)
+  - $HibernateSessionSource_163cc81b75ab.create(Unknown Source)
+  - org.apache.tapestry5.internal.hibernate.HibernateSessionManagerImpl.<init>(HibernateSessionManagerImpl.java:31)
+  - org.apache.tapestry5.hibernate.modules.HibernateCoreModule.buildHibernateSessionManager(HibernateCoreModule.java:96)
+  - sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  - sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+  - sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+  - java.lang.reflect.Method.invoke(Unknown Source)
+  - org.apache.tapestry5.ioc.internal.util.MethodInvoker.invoke(MethodInvoker.java:52)
+  - org.apache.tapestry5.ioc.internal.util.LoggingInvokableWrapper.invoke(LoggingInvokableWrapper.java:43)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1258)
+  - org.apache.tapestry5.ioc.internal.util.ConstructionPlan.createObject(ConstructionPlan.java:61)
+  - org.apache.tapestry5.ioc.internal.ServiceBuilderMethodInvoker.createObject(ServiceBuilderMethodInvoker.java:61)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator$1.invoke(OperationTrackingObjectCreator.java:47)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1258)
+  - org.apache.tapestry5.ioc.internal.OperationTrackingObjectCreator.createObject(OperationTrackingObjectCreator.java:51)
+  - org.apache.tapestry5.ioc.internal.services.PerthreadManagerImpl$3.createObject(PerthreadManagerImpl.java:170)
+  - $HibernateSessionManager_163cc81b761c.delegate(Unknown Source)
+  - $HibernateSessionManager_163cc81b761c.getSession(Unknown Source)
+  - $HibernateSessionManager_163cc81b75dc.getSession(Unknown Source)
+  - $Session_163cc81b761b.readProperty(Unknown Source)
+  - $Session_163cc81b761b.save(Unknown Source)
+  - $Session_163cc81b7590.save(Unknown Source)
+  - ge.books.intbooks.pages.AddData.advised$onActivate_163cc81b75f0(AddData.java:38)
+  - ge.books.intbooks.pages.AddData$Invocation_onActivate_163cc81b75ef.proceedToAdvisedMethod(Unknown Source)
+  - org.apache.tapestry5.internal.plastic.AbstractMethodInvocation.proceed(AbstractMethodInvocation.java:90)
+  - org.apache.tapestry5.internal.hibernate.CommitAfterWorker$1.advise(CommitAfterWorker.java:54)
+  - org.apache.tapestry5.internal.plastic.AbstractMethodInvocation.proceed(AbstractMethodInvocation.java:92)
+  - ge.books.intbooks.pages.AddData.onActivate(AddData.java)
+  - ge.books.intbooks.pages.AddData.dispatchComponentEvent(AddData.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:917)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1102)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:57)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1047)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1044)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1258)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:154)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1043)
+  - org.apache.tapestry5.internal.structure.InternalComponentResourcesImpl.triggerContextEvent(InternalComponentResourcesImpl.java:288)
+  - org.apache.tapestry5.internal.services.PageActivatorImpl.activatePage(PageActivatorImpl.java:51)
+  - $PageActivator_163cc81b75f9.activatePage(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageRenderRequestHandlerImpl.handle(PageRenderRequestHandlerImpl.java:60)
+  - org.apache.tapestry5.modules.TapestryModule$34.handle(TapestryModule.java:1974)
+  - $PageRenderRequestHandler_163cc81b75fa.handle(Unknown Source)
+  - $PageRenderRequestHandler_163cc81b75f4.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handlePageRender(ComponentRequestHandlerTerminator.java:48)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handlePageRender(DeferredResponseRenderer.java:52)
+  - $ComponentRequestHandler_163cc81b75f5.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handlePageRender(InitializeActivePageName.java:47)
+  - $ComponentRequestHandler_163cc81b75f5.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$2.run(RequestOperationTracker.java:73)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.run(OperationTrackerImpl.java:56)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.run(PerThreadOperationTracker.java:60)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.run(RegistryImpl.java:1252)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handlePageRender(RequestOperationTracker.java:66)
+  - $ComponentRequestHandler_163cc81b75f5.handlePageRender(Unknown Source)
+  - $ComponentRequestHandler_163cc81b75c1.handlePageRender(Unknown Source)
+  - org.apache.tapestry5.internal.services.PageRenderDispatcher.dispatch(PageRenderDispatcher.java:55)
+  - $Dispatcher_163cc81b75c4.dispatch(Unknown Source)
+  - $Dispatcher_163cc81b75bb.dispatch(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$RequestHandlerTerminator.service(TapestryModule.java:305)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:26)
+  - $RequestHandler_163cc81b75bc.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$3.service(TapestryModule.java:845)
+  - $RequestHandler_163cc81b75bc.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:835)
+  - $RequestHandler_163cc81b75bc.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_163cc81b75bc.service(Unknown Source)
+  - ge.books.intbooks.services.AppModule$1.service(AppModule.java:125)
+  - $RequestFilter_163cc81b75b6.service(Unknown Source)
+  - $RequestHandler_163cc81b75bc.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:105)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:95)
+  - org.apache.tapestry5.ioc.internal.util.ConcurrentBarrier.withRead(ConcurrentBarrier.java:85)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter.service(CheckForUpdatesFilter.java:119)
+  - $RequestHandler_163cc81b75bc.service(Unknown Source)
+  - $RequestHandler_163cc81b75b0.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$HttpServletRequestHandlerTerminator.service(TapestryModule.java:256)
+  - org.apache.tapestry5.internal.gzip.GZipFilter.service(GZipFilter.java:59)
+  - $HttpServletRequestHandler_163cc81b75b2.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:62)
+  - $HttpServletRequestFilter_163cc81b75ad.service(Unknown Source)
+  - $HttpServletRequestHandler_163cc81b75b2.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:795)
+  - $HttpServletRequestHandler_163cc81b75b2.service(Unknown Source)
+  - $HttpServletRequestHandler_163cc81b75ac.service(Unknown Source)
+  - org.apache.tapestry5.TapestryFilter.doFilter(TapestryFilter.java:168)
+  - org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1476)
+  - org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:499)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+  - org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+  - org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+  - org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+  - org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:428)
+  - org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+  - org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+  - org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+  - org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+  - org.eclipse.jetty.server.Server.handle(Server.java:370)
+  - org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+  - org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+  - org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+  - org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+  - org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+  - org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+  - org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:667)
+  - org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+  - org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+  - java.lang.Thread.run(Unknown Source)
+
+REQUEST:
+
+Basic Information:
+
+      contextPath: 
+           method: GET
+             path: /adddata
+           locale: en_US
+       serverName: localhost
+       remoteHost: 127.0.0.1
+
+Headers:
+
+           Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  Accept-Encoding: gzip, deflate
+  Accept-Language: en-US,en;q=0.5
+       Connection: keep-alive
+           Cookie: JSESSIONID=17m8m4vphw256n40zjf8krgec
+             Host: localhost:8080
+       User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0
+
+SYSTEM INFORMATION:
+
+Memory:
+      280 584 072 bytes free
+      317 194 240 bytes total
+    1 778 384 896 bytes max
+
+16 Threads:
+                                               Reference Handler WAITING, daemon, priority 10
+                                                       Finalizer WAITING, daemon, priority 8
+                                               Signal Dispatcher RUNNABLE, daemon, priority 9
+                                                 Attach Listener RUNNABLE, daemon
+                                                 Java2D Disposer WAITING, daemon, priority 10
+                                                     AWT-Windows RUNNABLE, daemon, priority 6
+                                           Eclipse Jetty Console RUNNABLE, daemon
+                                          HashSessionScavenger-0 TIMED_WAITING, daemon
+                                      qtp2128227771-19 Selector0 RUNNABLE
+  qtp2128227771-20 Acceptor0 SelectChannelConnector@0.0.0.0:8080 RUNNABLE
+                                                   DestroyJavaVM RUNNABLE
+*                                               qtp2128227771-23 RUNNABLE
+                                                qtp2128227771-24 TIMED_WAITING
+                                                qtp2128227771-25 TIMED_WAITING
+                                                qtp2128227771-26 TIMED_WAITING
+                                                 pool-1-thread-1 TIMED_WAITING

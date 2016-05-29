@@ -1,0 +1,22 @@
+<html t:type="layout" title="${message:login.title}"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+<t:form t:id="login" class="form-signin">
+	<h3 class="form-signin-heading">${message:login.header}</h3>	
+	<label for="inputUsername" class="sr-only">${message:login.username}</label>
+	<t:textfield t:id="username" id="inputUsername" class="form-control"
+		value="usernameValue" placeholder="${message:login.username}" validate="required"
+		autofocus="'autofocus" />
+	<label for="inputPassword" class="sr-only">${message:login.password}</label>
+	<t:passwordfield t:id="password" id="inputPassword"
+		value="passwordValue" class="form-control" placeholder="${message:login.password}"
+		validate="required" />
+	<t:submit class="btn btn-large btn-primary" value="${message:login.submit}" />
+	
+	<div class="error-box">
+		<t:errors />
+	</div>
+</t:form>
+
+</html>

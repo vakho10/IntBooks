@@ -1,0 +1,77 @@
+<html t:type="layout" title="${message:profile.title}"
+	t:sidebarTitle="Framework Version" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+	<div class="row">
+		<div class="col-sm-12">
+			<t:alerts />
+
+			<h1>${message:profile.my_reviews}</h1>
+			<hr />
+			<t:If t:test="oneOrMoreReviewAvailable">
+				<table class="table table-hover table-bordered table-striped">
+					<thead>
+						<th>${message:profile.book_title}</th>
+						<th>${message:profile.book_author}</th>
+						<th>${message:profile.my_rating}</th>
+						<th>${message:profile.delete}</th>
+					</thead>
+					<tbody>
+						<tr t:type="loop" t:source="reviews" t:value="review">
+							<td>
+								<t:pagelink page="view" context="review.book.id">${review.book.title}
+								</t:pagelink>
+							</td>
+							<td>${review.book.author}</td>
+							<td>
+								<i class="fa fa-star fa-lg" aria-hidden="true"></i>
+								${review.rating}
+							</td>
+							<td>
+								<t:EventLink t:event="deleteReview" t:context="${review.id}">${message:profile.delete}
+								</t:EventLink>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p:else>
+					<div class="alert alert-info">${message:profile.no_reviews}</div>
+				</p:else>
+			</t:If>
+		</div>
+	</div>
+
+	<t:If test="userAdmin">
+		<div class="row">
+			<div class="col-sm-12">
+				<t:pagelink page="profile/BookCreate">Create book...</t:pagelink>
+				<br />
+				<br />
+
+				<t:if test="errorMessage">
+					<div class="alert alert-danger">
+						${errorMessage}
+					</div>
+				</t:if>
+
+				<t:grid source="books" row="book"
+					include="id,title,author,releaseYear,ribbon,postDate"
+					add="[reviewAction,updateAction,deleteAction]">
+					<p:reviewActionCell>
+						<t:pagelink page="View" context="book.id">Review
+						</t:pagelink>
+					</p:reviewActionCell>
+					<p:updateActionCell>
+						<t:pagelink page="profile/BookUpdate" context="book.id">Update
+						</t:pagelink>
+					</p:updateActionCell>
+					<p:deleteActionCell>
+						<t:eventlink event="Delete" context="[book.id]"
+							t:mixins="Confirm" Confirm.message="Delete ${book.title}?">Delete</t:eventlink>
+					</p:deleteActionCell>
+				</t:grid>
+			</div>
+		</div>
+	</t:If>
+
+</html>

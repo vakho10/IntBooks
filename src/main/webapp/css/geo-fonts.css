@@ -1,0 +1,28 @@
+@font-face {
+    font-family: bpg_arial;
+    src: url("../fonts/geo/bpg_arial_2009.ttf");
+}
+@font-face {
+    font-family: ninomtavruli_normal;
+    src: url("../fonts/geo/bpg_nino_mtavruli_normal.ttf");
+}
+
+@font-face {
+    font-family: ninomtavruli_bold;
+    src: url("../fonts/geo/bpg_nino_mtavruli_bold.ttf");
+}
+
+@font-face {
+    font-family: supersquare;
+    src: url("../fonts/geo/bpg_supersquare_2013.ttf");
+}
+
+@font-face {
+    font-family: supersquare_caps;
+    src: url("../fonts/geo/bpg_supersquare_caps_2013.ttf");
+}
+
+@font-face {
+    font-family: supersquare_mtavruli;
+    src: url("../fonts/geo/bpg_supersquare_mtavruli_2009.ttf");
+}
