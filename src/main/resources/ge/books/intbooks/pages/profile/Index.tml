@@ -44,7 +44,7 @@
 	<t:If test="userAdmin">
 		<div class="row">
 			<div class="col-sm-12">
-				<t:pagelink page="profile/BookCreate">Create book...</t:pagelink>
+				<t:pagelink page="profile/BookCreate">${message:profile.create_book}...</t:pagelink>
 				<br />
 				<br />
 
@@ -58,16 +58,16 @@
 					include="id,title,author,releaseYear,ribbon,postDate"
 					add="[reviewAction,updateAction,deleteAction]">
 					<p:reviewActionCell>
-						<t:pagelink page="View" context="book.id">Review
+						<t:pagelink page="View" context="book.id">${message:profile.review}
 						</t:pagelink>
 					</p:reviewActionCell>
 					<p:updateActionCell>
-						<t:pagelink page="profile/BookUpdate" context="book.id">Update
+						<t:pagelink page="profile/BookUpdate" context="book.id">${message:profile.update}
 						</t:pagelink>
 					</p:updateActionCell>
 					<p:deleteActionCell>
 						<t:eventlink event="Delete" context="[book.id]"
-							t:mixins="Confirm" Confirm.message="Delete ${book.title}?">Delete</t:eventlink>
+							t:mixins="Confirm" Confirm.message="Delete ${book.title}?">${message:profile.delete}</t:eventlink>
 					</p:deleteActionCell>
 				</t:grid>
 			</div>

@@ -1,8 +1,11 @@
-<html t:type="layout" title="ჩვენ შესახებ"
-	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+<html t:type="layout" title="${message:about.title}"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
 
-	<div class="alert alert-danger">
-		Page is under construction.
-	</div>
-
+<p>
+<h2>${message:about.title}</h2>
+<br />
+<p>${message:about.text}</p>
+<br />
+</p>
 </html>
