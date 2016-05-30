@@ -41,7 +41,7 @@ public class Book {
 	@Column(name = "RIBBON")
 	private String ribbon;
 
-	@ManyToOne()
+	@ManyToOne
 	@JoinColumn(name = "USER_ID")
 	private User publisher;
 
