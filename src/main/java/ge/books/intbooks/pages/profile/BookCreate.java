@@ -18,7 +18,7 @@ public class BookCreate {
 	// Screen fields
     @Property
     private Book book;
-
+    
     // Other pages
     @InjectPage
     private Index indexPage;
