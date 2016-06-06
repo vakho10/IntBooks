@@ -9,10 +9,13 @@
 		<t:alerts />
 		<t:beaneditform t:id="form" object="book"
 			include="title,author,releaseYear,description,ribbon,coverImageUrl"
-			submitLabel="Save" cancel="true">
-			<p:description>			
+			submitLabel="${message:create.save}" cancel="true">
+			<p:description>
 				<t:label for="description" />
-				<t:textarea t:id="description" value="book.description" />
+<!-- 				<t:textarea t:id="description" value="book.description" /> -->
+				
+				<t:textarea t:id="description" t:mixins="tynamo/ckeditor" parameters="prop:CKEditorParameters"  value="book.description"  />
+				
 			</p:description>
 		</t:beaneditform>
 	</div>

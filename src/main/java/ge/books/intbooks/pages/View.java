@@ -3,12 +3,14 @@ package ge.books.intbooks.pages;
 import java.util.List;
 import java.util.Locale;
 
+import org.apache.tapestry5.Link;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.ioc.annotations.InjectService;
+import org.apache.tapestry5.services.PageRenderLinkSource;
 
 import ge.books.intbooks.entities.Book;
 import ge.books.intbooks.entities.BookReview;
@@ -75,6 +77,14 @@ public class View {
 		// Nothing...
 	}
 
+	@Inject
+	PageRenderLinkSource linkSource;
+		
+	public String getPageURL() {
+	    Link link = linkSource.createPageRenderLinkWithContext("View", this.bookId);
+	    return link.toAbsoluteURI();
+	}
+	
 	Object onActivate(long bookId) {
 		this.bookId = bookId;
 		this.book = bookService.getBookById(bookId);
@@ -88,10 +98,9 @@ public class View {
 			if (reviewByUser != null) {
 				ratingValue = reviewByUser.getRating();
 			}
-		}
-		
+		}		
 
-		this.bookReviews = bookService.getNonEmptyReviewsForBook(book);
+		this.bookReviews = bookService.getNonEmptyReviewsForBook(book);		
 		return null;
 	}
 

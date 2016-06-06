@@ -3,8 +3,7 @@
 	xmlns:p="tapestry:parameter">
 
 	<!-- BOOKS -->
-
-	<div class="jumbotron">
+	<div class="jumbotron" style="color: white; text-shadow: 1px 2px 3px #666; background-image: url('http://static.tumblr.com/iypeg1n/VOxljsp0j/header_books.jpg'); background-size: cover;">
 		<h1>${message:index.jumbotron.title}</h1>
 		<p>${message:index.jumbotron.text}</p>
 		<p>			

@@ -1,9 +1,15 @@
 package ge.books.intbooks.pages.profile;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.inject.Inject;
+
+import org.apache.tapestry5.Asset;
 import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.InjectPage;
+import org.apache.tapestry5.annotations.Path;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.BeanEditForm;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
@@ -32,6 +38,16 @@ public class BookCreate {
     
     @InjectService("UserService")
     private UserService userService;
+    
+    @Inject
+    @Path("context:js/config.js")
+    private Asset config;
+	
+    public Map<String, Object> getCKEditorParameters() {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("customConfig", config.toClientURL());
+        return map;
+    }
     
     // The code
     void onPrepareForRender() throws Exception {

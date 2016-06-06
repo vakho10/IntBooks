@@ -7,11 +7,11 @@
 	<div class="col-sm-12">
 		<h3>Update the Book</h3>
 		<t:alerts />
-		<t:beaneditform t:id="form" object="book" submitLabel="Save"
+		<t:beaneditform t:id="form" object="book" submitLabel="${message:update.save}"
 			cancel="true">
 			<p:description>
 				<t:label for="description" />
-				<t:textarea t:id="description" value="book.description" />
+				<t:textarea t:id="description" t:mixins="tynamo/ckeditor" parameters="prop:CKEditorParameters"  value="book.description"  />
 			</p:description>
 		</t:beaneditform>
 	</div>

@@ -4,13 +4,23 @@
 	xmlns:p="tapestry:parameter">
 
 
+<div id="fb-root"></div>
+<script src="${asset:context:/js/fb-comments.js}"></script>
+
 <div class="row">
 
 	<h1>
-		<i class="fa fa-bookmark fa-lg" aria-hidden="true"></i> <span
-			style="margin-left: 20px;"> ${book.title} <small
-			style="margin-left: 8px;">${book.author}</small>
-		</span>
+		<div class="pull-left">
+			<i class="fa fa-bookmark fa-lg" aria-hidden="true"></i> <span
+				style="margin-left: 20px;"> ${book.title} <small
+				style="margin-left: 8px;">${book.author}</small>
+			</span>
+		</div>
+		<div class="pull-right">
+			<div class="fb-share-button" data-href="${pageURL}"
+				data-layout="button_count" data-mobile-iframe="true"></div>
+		</div>
+		<div style="clear: both;"></div>
 	</h1>
 	<hr />
 </div>
@@ -70,7 +80,7 @@
 			</tr>
 			<tr>
 				<th>${message:view.book_description}:</th>
-				<td>${book.description}</td>
+				<td><t:outputraw value="${book.description}" /></td>
 			</tr>
 			<tr>
 				<th>${message:view.book_rating}:</th>
@@ -105,7 +115,6 @@
 		</dl>
 	</div>
 </t:If>
-
 
 <div class="row">
 	<div class="col-sm-12">
@@ -145,7 +154,14 @@
 		</t:If>
 	</div>
 </div>
+
 <br />
+
+<div class="fb-comments" data-href="${pageURL}" data-numposts="5"
+	width="100%"></div>
+
+<br />
+
 <script src="${asset:context:/js/jquery-1.12.3.min.js}"></script>
 
 <!-- Input to Star Rating -->

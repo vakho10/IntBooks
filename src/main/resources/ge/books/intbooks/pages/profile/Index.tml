@@ -44,6 +44,8 @@
 	<t:If test="userAdmin">
 		<div class="row">
 			<div class="col-sm-12">
+				<h1>${message:profile.books}</h1>
+				<hr />			
 				<t:pagelink page="profile/BookCreate">${message:profile.create_book}...</t:pagelink>
 				<br />
 				<br />
@@ -54,7 +56,7 @@
 					</div>
 				</t:if>
 
-				<t:grid source="books" row="book"
+				<t:grid source="books" row="book" t:pagerPosition="both" t:rowsPerPage="10"
 					include="id,title,author,releaseYear,ribbon,postDate"
 					add="[reviewAction,updateAction,deleteAction]">
 					<p:reviewActionCell>
